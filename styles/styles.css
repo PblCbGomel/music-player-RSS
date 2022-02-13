@@ -1,0 +1,458 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+button {
+    transition: .3s;
+}
+
+button:hover {
+    filter: brightness(70%);
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../assets/img/aloneAgain.png);
+    background-size: 100%;
+    background-position: center;
+    transition: .3s;
+}
+
+.blur {  
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.audio {
+    height: 510px;
+    width: 360px;
+}
+
+.img-audio {
+    box-shadow: 0 0 15px #000000;
+    width: 100%;
+    height: 300px;
+    background-image: url(../assets/img/aloneAgain.png);
+    background-size: 360px 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: .3s;
+    animation: moveS 2.5s infinite linear;
+}
+
+.player {
+    box-shadow: 0 0 15px #000000;
+    background: linear-gradient(45deg, rgb(3, 3, 3), rgb(95, 95, 95));
+    width: calc(100% - 50px);
+    height: 210px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+    flex-wrap: wrap;
+    animation: moveS 2.5s infinite linear;
+}
+
+@keyframes moveS {
+    0% {
+        box-shadow: 0 0 15px #000000;
+    }
+    50% {
+        box-shadow: 0 0 50px #000000;
+    }
+    100% {
+        box-shadow: 0 0 15px #000000;
+    }
+  }
+
+.interactive-player {
+    background: none;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto 20px;
+}
+
+.player-button {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    margin-left: 30px;
+    background: url(../assets/svg/play.png);
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.player-button-active {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    margin-left: 30px;
+    background: url(../assets/svg/pause.png);
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.music {
+    text-align: center;
+    margin-left: 6px;
+    width: 230px;
+    height: 60px;
+}
+
+p {
+    transition: .3s;
+}
+
+.group {    
+    margin: 0;
+    padding: 0;
+    color: white;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.music-name {
+    color: rgb(121, 112, 248);
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.next-prev-song {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.number {
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(121, 112, 248);
+    margin: 0 15px;
+    width: 60px;
+    text-align: center;
+}
+
+.prev-song, .next-song {
+    width: 30px;
+    height: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.next-song {
+    background: url(../assets/svg/forward.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px 30px;
+}
+
+.prev-song {
+    background: url(../assets/svg/backward.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px 30px;
+}
+
+.progress {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progress-bar {
+    width: 75%;
+}
+
+.this-time, .full-time {
+    font-size: 14px;
+    color: rgb(121, 112, 248);
+}
+
+.progress-bar {
+    -webkit-appearance: none;
+    height: 5px;
+    background: rgb(255, 255, 255);
+    background-image: linear-gradient(#b9b9b9, #7c7c7c);
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+}
+  
+.progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    border-radius: 3px;
+    width: 5px;
+    background: #646464;
+    cursor: pointer;
+}
+
+.progress-bar::-webkit-slider-runnable-track  {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+
+.volume-bar {
+    -webkit-appearance: none;
+    height: 5px;
+    background: rgb(255, 255, 255);
+    background-image: linear-gradient(#b9b9b9, #7c7c7c);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+  .volume-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    border-radius: 3px;
+    width: 5px;
+    background: #646464;
+    cursor: pointer;
+}
+  
+.volume-block {
+    transition: .3s;
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.volume-icon {
+    background: url(../assets/svg/volume.png);
+    width: 30px;
+    height: 30px;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: .3s;
+    border: none;
+    outline: none;
+}
+
+.volume-icon-none {
+    background: url(../assets/svg/volume-off.png);
+    width: 30px;
+    height: 30px;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: .3s;
+    border: none;
+    outline: none;
+}
+
+.volume-icon:hover, .volume-icon-none:hover {
+    filter: brightness(70%);
+}
+
+.volume-num {
+    margin-left: 10px;
+    width: 30px;
+}
+
+footer {
+    padding: 5px 40px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #000000;
+    color: white;
+  }
+
+  .footer-list {
+    margin: 0;
+    padding: 0;
+    margin-top: 15px;
+  }
+
+  .footer-list li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  .footer-list li a {
+    text-decoration: none;
+    color: white;
+    transition: .3s;
+  }
+  
+  .footer-list li a:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
+  }
+
+  .rss-link {
+      height: 50px;
+      width: 135px;
+      transition: .3s;
+  }
+
+  .rss-link:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
+  }
+
+  .duration {
+      margin: auto;
+      color: rgb(121, 112, 248);
+      font-size: 14px;
+      margin-bottom: 10px;
+      font-weight: 700;
+  }
+
+@media (max-width: 500px)  {
+    main {
+        height: 100vh;
+    }
+
+    .blur {
+        height: 100vh;
+    }
+
+    .audio {
+        height: 300px;
+        width: 250px;
+        margin-top: -100px
+    }
+    
+    .img-audio {
+        height: 240px;
+    }
+    
+    .player {
+        width: calc(100% - 50px);
+        height: 160px;
+        padding: 15px 25px;
+    }
+    
+    .interactive-player {
+        background: none;
+        display: flex;
+        justify-content: center;
+        margin: 10px auto 20px;
+    }
+    
+    .player-button {
+        margin-left: 0;
+        width: 40px;
+        height: 40px;
+        background-size: 40px 40px;
+    }
+    
+    .player-button-active {
+        margin-left: 0;
+        width: 40px;
+        height: 40px;   
+        background-size: 40px 40px;
+    }
+    
+    .music {
+        width: 170px;
+        height: 50px;
+    }
+    
+    .group {
+        font-size: 10px;
+    }
+    
+    .music-name {
+        font-size: 14px;
+    }
+
+    .duration {
+        font-size: 10px;
+    }
+    
+    .number {
+        font-size: 12px;
+        width: 45px;
+    }
+    
+    .prev-song, .next-song {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .next-song {
+        background-size: 20px 20px;
+    }
+    
+    .prev-song {
+        background-size: 20px 20px;
+    }
+    
+    .this-time, .full-time {
+        font-size: 12px;
+    }
+    
+    .volume-icon {
+        margin-left: 10px;
+        width: 20px;
+        height: 20px;
+        background-size: 20px 20px;
+    }
+    
+    .volume-icon-none {
+        margin-left: 10px;
+        width: 20px;
+        height: 20px;
+        background-size: 20px 20px;
+    }
+    
+    footer {
+        padding: 5px 20px;
+      }
+    
+    .footer-list {
+        margin: 0;
+        padding: 0;
+        margin-top: 10px;
+      }
+    
+    .footer-list li {
+        margin-right: 10px;
+      }
+    
+    .rss-link {
+          height: 30px;
+          width: 100px;
+      }
+
+      .volume-num {
+        font-size: 12px;
+    }
+  }

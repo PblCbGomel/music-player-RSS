@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Audio player</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./styles/styles.css'>
+    <link rel="shortcut icon" href="./assets/svg/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <main>
+        <div class='blur'>
+            <div class="audio">
+                <div class="img-audio"></div>
+                <div class="player">
+                    <div class="duration">Duration: 00:00:00</div>
+                    <div class="next-prev-song">
+                        <button class="prev-song" onclick=""> </button>
+                        <div class="number">1 / 10</div>
+                        <button class="next-song" onclick=""> </button>
+                    </div>
+                    <div class="interactive-player">
+                        <button class="player-button" onclick=""> </button>
+                        <div class="music">
+                            <p class="music-name">Alone Again</p>
+                            <p class="group">Asking Alexandria</p>
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div class="this-time">0:00</div>
+                        <input type="range" class="progress-bar" min="0" max="229" value="0" id="range" oninput="range.value=value"/>
+                        <div class="full-time">3:49</div>
+                    </div>
+                    <div class="volume-block">
+                        <button class="volume-icon vi"></button>
+                        <input type="range" class="volume-bar" min="0" max="100" value="100" id="volume" oninput="volume.value=value"/>
+                        <div class="volume-num">100</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <ul class="footer-list">
+            <li>©</li>
+            <li>2022</li>
+            <li><a href="https://github.com/PblCbGomel" target="_blank">PblCbGomel</a></li>
+        </ul>
+        <a href="https://rs.school/js-stage0/"><img src="./assets/svg/rss.svg" class="rss-link"></a>
+    </footer>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>
